@@ -8,9 +8,11 @@
 https://miro.com/app/board/o9J_l5ffISA=/
 
 ## Approach & Efficiency :
-- create the function for
- the binary search purpose.
--create a variable to hold the default value in case no match which will be -1
--Inside this function add for loop that will iterate from the 0 index to the last index of the list
--inside it put if statement to check if the value entered equal any values inside the list.
-- When match occur and the condition is true then assign the iteration number to the variable and return the variable
+
+- created the function for the binary search purpose.
+- declaring three variables one for the start point index and one for the end point index and one for the middle index.
+- loop through the values using the while as long as the start index is lower than the end index.
+- add a value for the middle index by dividing the summation of the start and end indexes by 2.
+- then check if the target value equal the value at the middle index if not,
+- check if the target value is bigger than the value at the middle index then ignore the left part meaning make the start index equal to the middle index plus one , else non of the previous conditions then the target will be smaller than the value at the middle index in this case make the end index equal to the middle index -1.
+- in case no value found return -1.
