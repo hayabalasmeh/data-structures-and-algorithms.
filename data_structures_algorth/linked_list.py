@@ -16,7 +16,7 @@ class Node:
 
 
 
-class Linked_list():
+class LinkedList():
     
     def __init__(self):
         self.head = None
@@ -36,7 +36,7 @@ class Linked_list():
             node.next = self.head
         
         # we want the head to point to the new node value as the first value 
-        self.head = node.value
+        self.head = node
 
         #updating 
        # it suppose to return nothing only inserting value
@@ -49,10 +49,11 @@ class Linked_list():
 
         while current : #as to stop traversing when the  node is null
 
-           yield current #will stop the function and send the node to the caller then make the function complete from where it stopped
+           yield current.value #will stop the function and send the node to the caller then make the function complete from where it stopped
            current = current.next
     
     def includes(self,value):
+        
         nodes = self.__iter__()
 
         if value in nodes:
@@ -61,7 +62,15 @@ class Linked_list():
         else:
             return False
         
-    
+    def __str__(self):
+        nodes = self.__iter__()
+        string = ""
+        for value in nodes:
+            string = string + f"{ {value} } -> "
+        string = string + " Null"
+        return string
+
+
   
     
 
@@ -71,12 +80,13 @@ class Linked_list():
         return "LinkedList"
 
 if __name__ == '__main__' :
-   num = Linked_list()
+   num = LinkedList()
    num.insert(1)
    num.insert(2)
    num.insert(3)
-   print(num.includes(2))
-   
+   #node = Node(1)
+   print(num.includes(7))
+   print(num)
 
 #    integ = Linked_list()
 #    integ.insert(5)
