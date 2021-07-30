@@ -10,12 +10,13 @@ class Node:
         self.value = value
         self.next= None
     
-    
+    def __str__(self):
+        return str(self.value)
 
 
 
 
-class Linked_list:
+class Linked_list():
     
     def __init__(self):
         self.head = None
@@ -41,28 +42,44 @@ class Linked_list:
        # it suppose to return nothing only inserting value
     
      # checking if a value does exist inside the 
+
+    def __iter__(self):
+
+        current = self.head
+
+        while current : #as to stop traversing when the  node is null
+
+           yield current #will stop the function and send the node to the caller then make the function complete from where it stopped
+           current = current.next
     
     def includes(self,value):
-        if self.head == value:
-           
+        nodes = self.__iter__()
+
+        if value in nodes:
             return True
+
         else:
             return False
-
+        
+    
   
     
 
     # good representation of all the values(nodes) inside the linked list
+    # representation of the linked list
+    def __repr__(self):
+        return "LinkedList"
 
 if __name__ == '__main__' :
    num = Linked_list()
    num.insert(1)
    num.insert(2)
    num.insert(3)
-   print(num.includes(3))
-
-   integ = Linked_list()
-   integ.insert(5)
-   integ.insert(7)
+   print(num.includes(2))
    
-   print(integ.includes(5)) 
+
+#    integ = Linked_list()
+#    integ.insert(5)
+#    integ.insert(7)
+   
+#    print(integ.includes(5)) 
