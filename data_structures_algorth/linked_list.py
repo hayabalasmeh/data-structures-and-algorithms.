@@ -5,10 +5,10 @@
 #from _typeshed import Self
 
 
-class Node:
+class Node: # its has two thing associated with it the the data(values) and the pointer for the next value
     def __init__(self,value='' ):
         self.value = value
-        self.next= None
+        self.next= None # in ordder to be able to create node without data 
     
     def __str__(self):
         return str(self.value)
@@ -31,11 +31,11 @@ class LinkedList():
         #instanitation of node to pass the value to it in order to  added to it
         node = Node(value)
         
-        #to point the next pointer to the next value which is the current value but first need to check if the head is created meaning is pointning to vlue as if not I can't decide whic is the next value yet
+        #to point the next value pointer to the next value which is the current value of the head but first need to check if the head is created meaning is pointning to vlue as if not I can't decide which is the next value yet
         if self.head:
             node.next = self.head
         
-        # we want the head to point to the new node value as the first value 
+        # we want the head to inhirit the attributes of the node instance as self.head.value and self.head.next attributes
         self.head = node
 
         #updating 
