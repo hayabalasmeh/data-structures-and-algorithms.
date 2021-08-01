@@ -1,7 +1,7 @@
 
 import pytest
 
-from data_structures_algorth.linked_list import LinkedList,Node
+from data_structures_algorth.challenge_linked_list.linked_list import LinkedList,Node
 
 #test creation of node
 def test_create_node():
