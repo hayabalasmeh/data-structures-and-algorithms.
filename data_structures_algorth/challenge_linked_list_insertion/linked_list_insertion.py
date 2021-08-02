@@ -1,5 +1,8 @@
 # Building the class
 
+
+
+
 class Node:
 
     def __init__(self,value = ''):
@@ -37,54 +40,56 @@ class LinkedListInsertion:
 
     def add_after(self,value,new_value):
         node = Node(new_value)
-      
-        if self.head == None:
-            self.head = node
-            
+        
+        # if self.head == None:
+        #     self.head = node
+        
         
         current = self.head
-
-        holder = None
         
         while current.next: 
-            holder = current
-           
          #to tranverse through the nex until reach the value
-            if (holder.value == value):
+            if (current.value == value):
+                #first you need to keep the refrence for the next node
                 node.next = current.next
-                holder.next  =  node
+                current.next  =  node
                 # when the current.next equal to none assign the new obj to it
-                return
+                break
             current = current.next     
+       
         
     def add_before(self,value,new_value):
         node = Node(new_value)
-      
-        if self.head == None:
-            self.head = node
-            
-        
+        case = False
         current = self.head
-
-        holder = None
-        
-        while current.value != value: 
-            holder = current
+        prev = self.head
+        if(self.head == None):
+            next_node = Node(value)
+            self.head = node
+            node.next = next_node
+            
+        while current: 
+           
            
          #to tranverse through the nex until reach the value
-            # if (holder.value == value):
-             
+            if(current.value == value):
+                prev.next = node
+                node.next = current
+                case = True
+                break
                 # when the current.next equal to none assign the new obj to it
                 # return
+            prev = current
             current = current.next 
-        if (current != None):
-           node.next = holder.next
-           holder.next  =  node
+
+        # if (current != None):
+        #    node.next = holder.next
+        #    holder.next  =  node
         
         
         
                         
-        value = node
+      
 
     def __iter__(self):
 
@@ -111,6 +116,10 @@ if __name__ == '__main__' :
         num.append(5)
         num.add_before(7,6)
         # num.add_before(3,4)
-        print(num)
-        print(num)    
+        ll = LinkedListInsertion()
+        ll.append(1)
+        ll.add_after(1,4)
+        print(ll)
+        # print(num)
+        # print(num)    
 
