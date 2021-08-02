@@ -6,7 +6,7 @@
 
 
 class Node: # its has two thing associated with it the the data(values) and the pointer for the next value
-    def __init__(self,value='' ):
+    def __init__(self,value = '' ):
         self.value = value
         self.next= None # in ordder to be able to create node without data 
     
