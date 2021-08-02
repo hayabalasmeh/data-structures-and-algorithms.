@@ -13,7 +13,7 @@ def test_adding_to_end():
     assert actual == expected
 
 #Can successfully add multiple nodes to the end of a linked list
-def test_adding_to_end():
+def test_adding_to_end_multiple_values():
     first_obj = LinkedListInsertion()
     first_obj.append(5)
     first_obj.append(3)
@@ -38,9 +38,9 @@ def test_insert_after():
     expected = str(second_obj)
     actual = '{1} -> {2} -> {3} -> {6} -> {5} ->  Null'
     assert actual == expected
-    
+
 # if the value was not exist will return same 
-def test_insert_after():
+def test_insert_after_with_unexisted_value():
     second_obj = LinkedListInsertion()
     
     second_obj.append(1)
