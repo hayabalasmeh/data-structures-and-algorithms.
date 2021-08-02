@@ -53,7 +53,7 @@ class LinkedList():
         while current : #as to stop traversing when the  node is null
 
            yield current.value #will stop the function and send the node to the caller then make the function complete from where it stopped
-           self.all_values = self.all_values +1
+        #    self.all_values = self.all_values +1
            current = current.next
     
     def includes(self,value):
@@ -147,8 +147,8 @@ class LinkedList():
         if self.head == None:
             raise Exception('The node list is Empty')
 
-        if k > counter_list:
-            raise Exception('You are out Range')
+        if k > counter_list or k < 0:
+            raise Exception('You are out of Range')
         
             
         current = self.head
@@ -157,7 +157,7 @@ class LinkedList():
               return current.value
             counter_list =counter_list-1  
             current = current.next
-        raise Exception('You are out Range')
+        raise Exception('The value does not exist')
         
     
 
