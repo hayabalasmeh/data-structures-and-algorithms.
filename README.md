@@ -8,3 +8,4 @@
  | Third challenge |    [Third one](challenge_3)    |
  | Fifth challenge |    [Fifth one](challenge_linked_list) |
  | Sixth challenge |    [Sixth one](challenge_linked_list.readme.md) |
+ | Seventh challenge |    [Seventh one](challenge_valuekth) |
