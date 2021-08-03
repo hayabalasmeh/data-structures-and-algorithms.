@@ -5,6 +5,7 @@
 #from _typeshed import Self
 
 
+from _typeshed import Self
 from typing import Counter
 
 
@@ -159,7 +160,18 @@ class LinkedList():
             current = current.next
         raise Exception('The value does not exist')
         
-    
+    def linked_list_zip(self,link_list_one,link_list_two):
+       
+    #    new_list = LinkedList()
+       
+    #    new_list.self.insert(link_list_one.head.value)
+       node = Node(0)
+       self.head = node 
+       
+       current = self.head
+       while current.next:
+           
+
 
     # good representation of all the values(nodes) inside the linked list
     # representation of the linked list
