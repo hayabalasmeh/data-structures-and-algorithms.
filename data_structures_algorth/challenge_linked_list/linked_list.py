@@ -163,8 +163,9 @@ class LinkedList():
         
     def linked_list_zip(self,link_list_one,link_list_two):
        
-       
-       
+        node = Node(None)
+        self.head = node
+        current = self.head
     #    new_list.self.insert(link_list_one.head.value)
         if link_list_one and link_list_two == None:
            raise Exception('The value does not exist')
@@ -177,21 +178,21 @@ class LinkedList():
         second = link_list_two.head
         
         # new_list = LinkedList()
-        current = self.head
+        
         while first or second:
-            if first.next:
+            if first:
             
                 current = first
                 current.value = first.value
                 first = first.next
              
-            if second.next:
+            if second:
               
                 current= second
                 current.value = second.value
                 second= second.next
             current = current.next
-        return current
+        
 
     # good representation of all the values(nodes) inside the linked list
     # representation of the linked list
