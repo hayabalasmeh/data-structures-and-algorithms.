@@ -5,8 +5,9 @@
 #from _typeshed import Self
 
 
-from _typeshed import Self
-from typing import Counter
+
+
+from typing import Counter, List
 
 
 class Node: # its has two thing associated with it the the data(values) and the pointer for the next value
@@ -162,16 +163,35 @@ class LinkedList():
         
     def linked_list_zip(self,link_list_one,link_list_two):
        
-    #    new_list = LinkedList()
+       
        
     #    new_list.self.insert(link_list_one.head.value)
-       node = Node(0)
-       self.head = node 
-       
-       current = self.head
-       while current.next:
-           
-
+        if link_list_one and link_list_two == None:
+           raise Exception('The value does not exist')
+        if link_list_one.head == None:
+          return link_list_two
+        if link_list_two.head == None:
+          return link_list_one
+        
+        first = link_list_one.head
+        second = link_list_two.head
+        
+        # new_list = LinkedList()
+        current = self.head
+        while first or second:
+            if first.next:
+            
+                current = first
+                current.value = first.value
+                first = first.next
+             
+            if second.next:
+              
+                current= second
+                current.value = second.value
+                second= second.next
+            current = current.next
+        return current
 
     # good representation of all the values(nodes) inside the linked list
     # representation of the linked list
@@ -180,12 +200,18 @@ class LinkedList():
 
 if __name__ == '__main__' :
    num = LinkedList()
+   num_2 = LinkedList()
+   num_4 = LinkedList()
    num.insert(1)
-#    num.insert(2)
-#    num.insert(3)
+   num.insert(2)
+   num.insert(3)
+   num_2.insert(5)
+   num_2.insert(8)
+   num_3 = LinkedList()
+   print(num_3.linked_list_zip(num,num_2))
    #node = Node(1)
 #    print(num.includes(7))
-   print(num.get_kth_value(0))
+   
   
 
 #    integ = Linked_list()
