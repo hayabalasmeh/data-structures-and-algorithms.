@@ -160,59 +160,37 @@ class LinkedList():
             counter_list =counter_list-1  
             current = current.next
         raise Exception('The value does not exist')
-        
-    def linked_list_zip(self,link_list_one,link_list_two):
-       
-        node = Node(None)
-        self.head = node
-        current = self.head
-    #    new_list.self.insert(link_list_one.head.value)
-        if link_list_one and link_list_two == None:
-           raise Exception('The value does not exist')
-        if link_list_one.head == None:
-          return link_list_two
-        if link_list_two.head == None:
-          return link_list_one
-        
-        first = link_list_one.head
-        second = link_list_two.head
-        
-        # new_list = LinkedList()
-        
-        while first or second:
-            if first:
-            
-                current = first
-                current.value = first.value
-                first = first.next
-             
-            if second:
-              
-                current= second
-                current.value = second.value
-                second= second.next
-            current = current.next
-        
 
-    # good representation of all the values(nodes) inside the linked list
-    # representation of the linked list
     def __repr__(self):
+         
+        #good representation of all the values(nodes) inside the linked list
+        #representation of the linked list
+         
         return "LinkedList"
+
+        
+  
+                
 
 if __name__ == '__main__' :
    num = LinkedList()
    num_2 = LinkedList()
    num_4 = LinkedList()
-   num.insert(1)
    num.insert(2)
-   num.insert(3)
-   num_2.insert(5)
-   num_2.insert(8)
-   num_3 = LinkedList()
-   print(num_3.linked_list_zip(num,num_2))
+   num.insert(1)
+   num.insert(8)
+#    num_2.insert(4)
+   num_2.insert(3)
+  
+#    print(linked_list_zip(num,num_2))
    #node = Node(1)
 #    print(num.includes(7))
-   
+   list = LinkedList() 
+   list.insert(3)
+   list.insert(4)
+   list.insert(5)
+#    print(list)
+#    print(reversed_linked_list(list)) 
   
 
 #    integ = Linked_list()
