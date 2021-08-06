@@ -103,12 +103,14 @@ class LinkedList():
         
         current = self.head
         
-        while current.next: 
+        while current: 
          #to tranverse through the nex until reach the value
             if (current.value == value):
+                
                 #first you need to keep the refrence for the next node
                 node.next = current.next
                 current.next  =  node
+                
                 # when the current.next equal to none assign the new obj to it
                 break
             current = current.next     
@@ -116,22 +118,31 @@ class LinkedList():
         
     def add_before(self,value,new_value):
         node = Node(new_value)
-        case = False
+        
         current = self.head
-        prev = self.head
+        prev = None
         if(self.head == None):
-            next_node = Node(value)
-            self.head = node
-            node.next = next_node
+            
+            raise Exception("List is Empty")
+            # next_node = Node(value)
+            # self.head = node
+            # node.next = next_node
             
         while current: 
            
            
          #to tranverse through the nex until reach the value
             if(current.value == value):
+                if current.value == self.head.value:
+                    self.head = node
+                    node.next = current
+
+                    break
                 prev.next = node
+                
                 node.next = current
-                case = True
+                
+                
                 break
                 # when the current.next equal to none assign the new obj to it
                 # return

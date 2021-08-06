@@ -3,7 +3,8 @@
 ## creation and testing alinked list that has methods to append and insert before and after a value.
 
 ## Whiteboard Process
-- As I can remember we have been told at the last week that the code is enough for submission
+-https://miro.com/welcomeonboard/dHhUUFJQUDJQd05JRmlZSkNDSzVkMERtZUp5OVltM1ZhS1RMUHVTT0N4VkhwYlkxeFpyelZtOWhXWlQzNlZscHwzMDc0NDU3MzYxNzU4NzExMTcx
+- https://miro.com/app/board/o9J_l3H3gkk=/
 
 ## Approach & Efficiency
 - Big O notation :
