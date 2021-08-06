@@ -5,7 +5,9 @@
 #from _typeshed import Self
 
 
-from typing import Counter
+
+
+from typing import Counter, List
 
 
 class Node: # its has two thing associated with it the the data(values) and the pointer for the next value
@@ -158,22 +160,37 @@ class LinkedList():
             counter_list =counter_list-1  
             current = current.next
         raise Exception('The value does not exist')
-        
-    
 
-    # good representation of all the values(nodes) inside the linked list
-    # representation of the linked list
     def __repr__(self):
+         
+        #good representation of all the values(nodes) inside the linked list
+        #representation of the linked list
+         
         return "LinkedList"
+
+        
+  
+                
 
 if __name__ == '__main__' :
    num = LinkedList()
+   num_2 = LinkedList()
+   num_4 = LinkedList()
+   num.insert(2)
    num.insert(1)
-#    num.insert(2)
-#    num.insert(3)
+   num.insert(8)
+#    num_2.insert(4)
+   num_2.insert(3)
+  
+#    print(linked_list_zip(num,num_2))
    #node = Node(1)
 #    print(num.includes(7))
-   print(num.get_kth_value(0))
+   list = LinkedList() 
+   list.insert(3)
+   list.insert(4)
+   list.insert(5)
+#    print(list)
+#    print(reversed_linked_list(list)) 
   
 
 #    integ = Linked_list()
