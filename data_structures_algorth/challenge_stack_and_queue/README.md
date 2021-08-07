@@ -41,3 +41,5 @@ will ckeck if the stack is empty or not by checking if the top pointer is pointi
 4- Is empty method:
 will ckeck if the queue is empty or not by checking if the top pointer is pointing to none or not
 
+## PR link:
+https://github.com/hayabalasmeh/data-structures-and-algorithms./pull/7
