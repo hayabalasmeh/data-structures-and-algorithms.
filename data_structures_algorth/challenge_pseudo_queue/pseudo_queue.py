@@ -14,9 +14,28 @@ class PseudoQueue:
             while not self.front.is_empty():  
                removed = self.front.pop()
                self.rear.push(removed)
+            return self.rear.pop()
 
         
         return self.rear.pop()
+
+    def __str__(self): 
+        string = ''
+        if self.front.top:
+            current = self.front.top
+            while current:
+               string = string + f"{ {current.value} } -> "
+               current=current.next
+        else:
+            current = self.rear.top
+            while current:
+               string =  f"{ {current.value} } -> " + string
+               current=current.next
+            
+        
+        
+        string= string + " None"
+        return string 
 
         
 
@@ -27,9 +46,12 @@ if __name__ == '__main__':
     pseudo.enqueue(3)
     pseudo.enqueue(3)
     pseudo.dequeue()
-    print(pseudo.front.top.value)
-    print(pseudo.rear.top.value)
-    print(pseudo.dequeue())
+    pseudo.dequeue()
+    print(pseudo)
+    # pseudo.dequeue()
+    # print(pseudo.front.top.value)
+    # print(pseudo.rear.top.value)
+    # print(pseudo.dequeue())
     # print(pseudo.dequeue())
     # print(pseudo.dequeue())
     # print(pseudo.dequeue())

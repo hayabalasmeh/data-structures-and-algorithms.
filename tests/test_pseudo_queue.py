@@ -12,6 +12,8 @@ def test_pseudo_enqueue_value():
     expected = 2
     assert actual == expected
 
+
+
 #Can successfully dequeue out of a queue the expected value
 def test_pseudo_dequeue_value():
     queue = PseudoQueue()

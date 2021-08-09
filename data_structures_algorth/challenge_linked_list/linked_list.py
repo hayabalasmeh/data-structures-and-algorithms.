@@ -179,14 +179,7 @@ class LinkedList():
          
         return "LinkedList"
 
-    #     def __str__(self):
-    #   current = self.front.top
-    #   string = ''
-    #   while current:
-    #       string = string + f' ->{current.value}'
-    #       current=current.next
-    #   string= string + "None"
-    #   return string 
+  
   
                 
 
