@@ -31,7 +31,7 @@ will ckeck if the stack is empty or not by checking if the top pointer is pointi
 ### Queue:
 
 1- Enqueue method:
-- create a node with a passed value and push this node to the top of the queue
+- create a node with a passed value and push this node to the rear of the queue
 
 2- Dequeue method:
 - return the value of the node that the top pointer was pointing to, and remove this node from the queue
