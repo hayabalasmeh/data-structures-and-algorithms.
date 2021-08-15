@@ -88,5 +88,3 @@ def test_shelter_enqueue_diff_animal_value():
     with pytest.raises(Exception) as excinfo:
         shelter.enqueue('bear')
     assert 'No other animals are allowed!!' == str(excinfo.value)
-
-    
