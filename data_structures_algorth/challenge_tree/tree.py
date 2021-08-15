@@ -1,6 +1,7 @@
 
 # from data_structures_algorth.challenge_tree.tree 
 ## creation of my class node 
+from data_structures_algorth.challenge_stack_and_queue.stack_queue import Queue
 
 class Node:
 
@@ -81,9 +82,7 @@ class BinaryTree:
         if type(root.value) == str: #Addressing non numeric type of data
             raise Exception('We cannot compare non numeric type of data')
 
-      
 
-      
         
         if root.value > self.max: # with each traversal compare the value of the node with the max prop
             self.max = root.value
@@ -95,8 +94,35 @@ class BinaryTree:
             self.max_value(root.right)
 
         return self.max #returning the max value after completing all the calls and compare it with all of the nodes
+    def max_value_other_way(self):
+        if self.root == None: #Addressing the edge case of empty tree
+            return None 
 
+        if type(self.root.value) == str: #Addressing non numeric type of data
+            raise Exception('We cannot compare non numeric type of data')
+        max = self.root.value
+        self.pre_order(self.root)
+        for item in self.nodes:
+            if item > max:
+                max = item
+        return max
         
+    def max_value_queue_way(self):
+        checker = Queue()
+        checker.enqueue(self.root)
+        max = self.root.value
+
+        while checker.front:
+            node = checker.dequeue() # will dequeue the front node
+            if node.value > max:
+                max = node.value
+            if node.left:
+                checker.enqueue(node.left)
+            if node.left:
+                checker.enqueue(node.right)
+        return max
+
+
     
 
 ## creation of Binary search class
@@ -179,13 +205,13 @@ if __name__=="__main__":
     by.root.left.right.left= Node(5)
     by.root.right.right = Node(9)
     by.root.right.right.left = Node(4)
-    print(by.max_value(by.root))
-    print(by.max)
+    print(by.max_value_queue_way())
+    # print(by.max)
     byy = BinaryTree()
     byy.root = Node(2)
     byy.root.right = Node(5)
     byy.max_value(byy.root)
-    print(byy.max)
+    # print(byy.max)
     # print(binary_tree.max_value(binary_tree.root))
     # print(binary_tree.in_order(binary_tree.root))
 
