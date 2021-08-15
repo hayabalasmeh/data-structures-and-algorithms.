@@ -22,3 +22,6 @@ https://miro.com/welcomeonboard/SnlUUmFHUlA3UTFJVkwxWGVuRG1tWExYUEJGbWRrY2xGNkVJ
 
 - dequeue:
 - create dequeue method and inside it apply the dequeue method on the cat or dog object according to which passed with the argument check before this if the each of the instances are not empty.
+
+## PR:
+-
