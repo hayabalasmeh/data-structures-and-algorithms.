@@ -25,7 +25,7 @@ class BinaryTree:
         Construct Binary tree object with a pointer to the root node of the tree
         """
         self.root = None
-        self.max = self.root
+        self.max = None
     
     def pre_order(self,root):
         """
