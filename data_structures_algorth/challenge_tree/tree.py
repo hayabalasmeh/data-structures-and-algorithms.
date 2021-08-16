@@ -25,7 +25,7 @@ class BinaryTree:
         Construct Binary tree object with a pointer to the root node of the tree
         """
         self.root = None
-        self.max = 0
+        self.max = self.root
     
     def pre_order(self,root):
         """
@@ -82,7 +82,8 @@ class BinaryTree:
         if type(root.value) == str: #Addressing non numeric type of data
             raise Exception('We cannot compare non numeric type of data')
 
-
+        if self.max == None:
+            self.max = self.root.value
         
         if root.value > self.max: # with each traversal compare the value of the node with the max prop
             self.max = root.value
@@ -206,7 +207,11 @@ if __name__=="__main__":
     by.root.right.right = Node(9)
     by.root.right.right.left = Node(4)
     print(by.max_value_queue_way())
-    # print(by.max)
+    byyy = BinaryTree()
+    byyy.root = Node(-2)
+    byyy.root.right = Node(-5)
+    byyy.root.left = Node(-7)
+    print(byyy.max_value(byyy.root))
     byy = BinaryTree()
     byy.root = Node(2)
     byy.root.right = Node(5)
