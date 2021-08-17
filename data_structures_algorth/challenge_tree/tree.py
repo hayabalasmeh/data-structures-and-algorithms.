@@ -228,6 +228,7 @@ if __name__=="__main__":
     bt.add(20)
     bt.add(2)
     bt.add(21)
+    print(5%5)
    
     # print(bt.contain(10))
     # print(bt.contain(0))
