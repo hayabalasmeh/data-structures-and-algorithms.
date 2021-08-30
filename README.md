@@ -10,3 +10,4 @@
  | Sixth challenge |    [Sixth one](challenge_linked_list.readme.md) |
  | Seventh challenge |    [Seventh one](challenge_valuekth) |
  | eight challenge |    [eight one](challenge_linked_list_zipped) |
+ | insertion challenge | [insertion](data_structures_algorth/challenge_insertion_sort/README.md)
