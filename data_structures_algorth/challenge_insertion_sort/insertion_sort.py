@@ -1,7 +1,8 @@
 # from data_structures_algorth.challenge_insertion_sort.insertion_sort
 
 def insertion_sort(arr):
-
+    if not arr:
+        return arr
     for i in range(1, len(arr)):
 
         j = i - 1
