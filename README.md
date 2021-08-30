@@ -12,3 +12,4 @@
  | Seventh challenge |    [Seventh one](challenge_valuekth) |
  | eight challenge |    [eight one](challenge_linked_list_zipped) |
  | insertion challenge | [insertion](data_structures_algorth/challenge_insertion_sort/README.md)
+ | merge challenge    |  [merge sort](data_structures_algorth/challenge_merge_sort/README.md)

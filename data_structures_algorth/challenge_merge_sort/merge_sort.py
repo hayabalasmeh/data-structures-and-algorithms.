@@ -3,6 +3,8 @@ from typing import List
 
 
 def mergesort(arr):
+    if not arr :
+        return arr
     n = len(arr)
 
     if n > 1:
@@ -32,10 +34,16 @@ def merge(left, right, arr):
 
         k = k + 1
 
-    if i == len(left):
-        arr[j-len(right)]= right[i-len(right)]
-    else:
-       arr[j-len(left)]= left[i-len(left)]
+   
+    while i < len(left):
+            arr[k] = left[i]
+            i += 1
+            k += 1
+ 
+    while j < len(right):
+            arr[k] = right[j]
+            j += 1
+            k += 1
 
 if __name__=="__main__":
     arr = [8,4,23,42,16,15]

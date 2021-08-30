@@ -23,3 +23,14 @@
 
 - Sample Array: `[8,4,23,42,16,15]`
 
+- Sorting
+
+ ![sort](firstphase.png)
+
+- Merging
+
+ ![merge](phaseofmerge.png)
+
+### Time complexity of Merge Sort is  O(nLogn)
+
+### Space complexity of Merge sort is O(n) as requires an additional memory space for the temp array
