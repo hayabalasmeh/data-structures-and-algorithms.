@@ -1,7 +1,8 @@
 # data-structures-and-algorithms
-## Table of content of Code Chellenges (401);
 
- | Fourth Level; Code (401) | Links for the challenges | 
+## Table of content of Code Chellenges (401)
+
+ | Fourth Level; Code (401) | Links for the challenges |
  | ----------- | -------------------------------- |
  | First challenge |    [First one](challenge_one)  |
  | Second challenge |    [Second one](challenge_2)  |
@@ -11,3 +12,4 @@
  | Seventh challenge |    [Seventh one](challenge_valuekth) |
  | eight challenge |    [eight one](challenge_linked_list_zipped) |
  | insertion challenge | [insertion](data_structures_algorth/challenge_insertion_sort/README.md)
+ | merge challenge    |  [merge sort](data_structures_algorth/challenge_merge_sort/README.md)

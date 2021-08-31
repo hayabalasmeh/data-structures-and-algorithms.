@@ -27,7 +27,7 @@
 
 - In the first pass through of the insertion sort,The temp value gets updated to remember the value at the current index .
 - We evaluate if the value at index j (i-1) is larger than what is currently present in index i.
-- We find this larger number right away in index 0. 
+- We find this larger number right away in index 0.  
 - The current value at index i is being updated with the previous value.
 - The j index become the index before what is currently j index refer to.
 - At the end of the evaluation, the larger number will be swapped with the current value in index i.
@@ -56,7 +56,7 @@
 
 - In the fourth pass through of the insertion sort,The temp value gets updated to remember the value at the current index .
 - We evaluate if the value at index j (i-1) is larger than what is currently present in index i.
-- We find this larger number right away in index 3 and 2. 
+- We find this larger number right away in index 3 and 2.  
 - The current value at index i is being updated with the previous value.
 - The j index become the index before what is currently j index refer to.
 - At the end of the evaluation, the larger number will be swapped with the current value in index i.
@@ -67,7 +67,7 @@
 
 - In the fourth pass through of the insertion sort,The temp value gets updated to remember the value at the current index .
 - We evaluate if the value at index j (i-1) is larger than what is currently present in index i.
-- We find this larger number right away in index 4 and 3 and 2. 
+- We find this larger number right away in index 4 and 3 and 2.  
 - The current value at index i is being updated with the previous value.
 - The j index become the index before what is currently j index refer to.
 - At the end of the evaluation, the larger number will be swapped with the current value in index i.
