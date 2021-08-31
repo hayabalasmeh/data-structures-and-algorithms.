@@ -18,13 +18,13 @@
 
 - Sample Array: `[8,4,23,42,16,15]`
 
-- Sorting
+- Partitioning and swaping .
 
- ![sort](firstphase.png)
+ ![first sort](quic1.png)
 
-- Merging
+![second sort](quick2.png)
 
- ![merge](phaseofmerge.png)
+ ![third sort](quick3.png)
 
 ### Time complexity of Merge Sort is  O(nLogn)
 

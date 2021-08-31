@@ -1,6 +1,6 @@
 
 def quicksort(arr, left, right):
-    if len(arr) == 1 or not arr:
+    if  not arr:
         return arr
     if left < right:
         
