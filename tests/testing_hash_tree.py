@@ -1,55 +1,73 @@
 from data_structures_algorth.challenge_hashtable.hashtable import HashTable
 from data_structures_algorth.challenge_tree_hash.tree_intersect_hash import find_common_val
-from data_structures_algorth.challenge_tree.tree import BinaryTree
+from data_structures_algorth.challenge_tree.tree import BinaryTree,Node
 
 #Can successfully return the first occurence of the word
 
-def test_find_repeated():
-    #ARRange
-    string = "Once upon a time, there was a brave princess who..."
+def test_find_common():
+    #Arrange
+    first = BinaryTree()
+    first.root = Node('5')
+   
+    first.root.right = Node('4')
+    first.root.left = Node('7')
+    second = BinaryTree()
+   
+    second.root = Node('5')
+    second.root.right = Node('4')
+    second.root.left = Node('1')
+    second.root.left.left = Node('7')
+   
     #Act
-    word = find_repeated(string)
+    common = find_common_val(first,second)
 
     #Assert
-    assert word == 'a'
+    assert common== [5,4,7]
 
-#Can successfully return the first occurence of the word if it was  capitalized
+#Can successfully return empty list if both trees are empty
 
-def test_find_repeated_upper_case():
+def test_find_common_empty():
     #ARRange
-    string = "It was the best of times, it was the worst of times, it was the age of wisdom, "
+    first = BinaryTree()
+    second = BinaryTree()
     #Act
-    word = find_repeated(string)
+    common = find_common_val(first,second)
 
     #Assert
-    assert word == 'it'
+    assert common == []
 
 #Can successfully return the first occurence of the word if it has extra character
 
-def test_find_repeated_extra_chara():
-    #ARRange
-    string = "It was a queer, sultry summer, the summer"
+def test_find_common_one_tree_empty():
+     #Arrange
+    first = BinaryTree()
+    second = BinaryTree()
+    second.root = Node(5)
+    second.root.left = Node(7)
     #Act
-    word = find_repeated(string)
+    common = find_common_val(first,second)
 
     #Assert
-    assert word == 'summer'
+    assert common == []
 
-def test_find_repeated_return_empty():
-    #Arrange
-    string = "It was a queer, sultry the summer"
+def test_find_common_no_match():
+     #Arrange
+    first = BinaryTree()
+    first.root = Node('5')
+   
+    first.root.right = Node('4')
+    first.root.left = Node('7')
+    second = BinaryTree()
+   
+    second.root = Node('8')
+    second.root.right = Node('41')
+    second.root.left = Node('1')
+    second.root.left.left = Node('9')
+   
     #Act
-    word = find_repeated(string)
+    common = find_common_val(first,second)
 
     #Assert
-    assert word == ''
+    assert common== []
 
-#addressing the empty string
-def test_find_repeated_check_empty():
-    #Arrange
-    string = ""
-    #Act
-    word = find_repeated(string)
 
-    #Assert
-    assert word == ''
