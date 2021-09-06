@@ -15,3 +15,4 @@
  | merge challenge    |  [merge sort](data_structures_algorth/challenge_merge_sort/README.md)
  | Quick challenge    |  [quick sort](data_structures_algorth/challenge_quick_sort/README.md)
  | Repeated Word      |  [Repeated word](data_structures_algorth/challenge_hashmap_repeated/README.md)
+ | Hash Tree          |  [Hash tree](data_structures_algorth/challenge_tree_hash/README.md)
