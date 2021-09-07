@@ -14,3 +14,4 @@
  | insertion challenge | [insertion](data_structures_algorth/challenge_insertion_sort/README.md)
  | merge challenge    |  [merge sort](data_structures_algorth/challenge_merge_sort/README.md)
  | Quick challenge    |  [quick sort](data_structures_algorth/challenge_quick_sort/README.md)
+ | Repeated Word      |  [Repeated word](data_structures_algorth/challenge_hashmap_repeated/README.md)
