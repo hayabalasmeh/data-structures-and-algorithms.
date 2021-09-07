@@ -8,8 +8,8 @@ class HashTable:
         Constructs a Hash table object with a size of 200 buckets 
 
         """
-        self.size = 200
-        self.buckets = [LinkedList()] * self.size
+        self.size = 20
+        self.buckets = [None] * self.size
     
     def hash(self,key:str)-> int:
         """
@@ -42,8 +42,9 @@ class HashTable:
         index = self.hash(key)
 
         #Second I need to add the value and key to the linkedlist at this index
-        
-        
+        if not self.buckets[index]:
+            self.buckets[index] = LinkedList()
+
         self.buckets[index].append([key,value])
 
     def get(self,key:str):
@@ -55,12 +56,13 @@ class HashTable:
 
         """
         index = self.hash(key)
-        element = self.buckets[index].head
-        while element:
-            if element.value[0] == key:
-                return element.value[1]
-            element = element.next
-        raise Exception( " No such key existed")
+        if self.buckets[index]:
+            element = self.buckets[index].head
+            while element:
+                if element.value[0] == key:
+                    return element.value[1]
+                element = element.next
+            raise Exception( " No such key existed")
 
     def contains(self,key:str)-> bool:
         """
@@ -70,12 +72,13 @@ class HashTable:
         
         """
         index = self.hash(key)
-        element = self.buckets[index].head
-        while element:
-            if element.value[0] == key:
-                return True
-            element = element.next
-        return False
+        if self.buckets[index]:
+            element = self.buckets[index].head
+            while element:
+                if element.value[0] == key:
+                    return True
+                element = element.next
+            return False
 
 
 
