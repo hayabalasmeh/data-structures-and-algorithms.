@@ -1,19 +1,20 @@
 from data_structures_algorth.challenge_hashtable.hashtable import HashTable,Node
 
+# First method 
+# def add_values(hashmap, values_list):
+#     for bucket in hashmap.__dict__['buckets']:
+#         if bucket:
+#             current = bucket.head
+#             while current:
+#                 values_list.append(current.value)
+#                 current = current.next
+#     return values_list 
 
-def add_values(hashmap, values_list):
-    for bucket in hashmap.buckets:
-        if bucket:
-            current = bucket.head
-            while current:
-                values_list.append(current.value)
-                current = current.next
-    return values_list 
-
-
+# second method
 def left_join( first_hash, second_hash):
-    joined_values = []
-    add_values(first_hash, joined_values)
+    
+    joined_values = first_hash.get_all_items()
+   
     if not joined_values:
        return joined_values
     for pairs in joined_values:
@@ -24,6 +25,9 @@ def left_join( first_hash, second_hash):
             pairs.append('Null')
         
     return joined_values
+
+# Second Method
+
 
 if __name__ == "__main__":
     hash_1 = HashTable()
