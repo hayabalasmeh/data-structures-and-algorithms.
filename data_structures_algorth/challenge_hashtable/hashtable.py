@@ -80,6 +80,17 @@ class HashTable:
                 element = element.next
             return False
 
+    def get_all_items(self):
+        all_values = []
+        for bucket in self.buckets:
+          if bucket:
+               
+            current = bucket.head
+            while current:
+                all_values.append(current.value)
+                current = current.next
+        return all_values
+
 
 
 
@@ -93,9 +104,10 @@ if __name__=="__main__":
     # print(type(arr[0]))
     obj = HashTable()
     obj.add('haya',2)
-   
+    obj.add('heba',4)
     index = obj.hash('haya')
-    print(obj.buckets[0].head.value == 2)
+    # print(obj.buckets[0].head.value == 2)
     # print(obj.buckets[index].includes(2))
-    print(obj.get('haya'))
-    print(obj.contains('hi'))
+    # print(obj.get('haya'))
+    # print(obj.contains('hi'))
+    print(obj.get_all_items())
