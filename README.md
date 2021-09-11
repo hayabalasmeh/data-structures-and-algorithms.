@@ -17,3 +17,4 @@
  | Repeated Word      |  [Repeated word](data_structures_algorth/challenge_hashmap_repeated/README.md)
  | Hash Tree          |  [Hash tree](data_structures_algorth/challenge_tree_hash/README.md)
  | Left join Hash     |  [Left Join](data_structures_algorth/challenge_hash_left_join/README.md)
+ | Graph              |  [Graph](data_structures_algorth/challenge_graph/README.md) |
