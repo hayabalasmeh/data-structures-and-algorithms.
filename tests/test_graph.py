@@ -74,6 +74,22 @@ def test_get_size():
     assert size == 3
     
      
+# Testiing Breadth traverse 
         
-    # A graph with only one node and edge can be properly returned
-    # An empty graph properly returns null
+def test_breadth():
+     #Arrange
+    graph = Graph()
+    vertex_zero =graph.add_vertex(0)
+    vertex_1 =graph.add_vertex(1)
+    vertex_2 = graph.add_vertex(2)
+    graph.add_edges(vertex_zero,vertex_1)
+    graph.add_edges(vertex_1,vertex_zero)
+    graph.add_edges(vertex_1,vertex_2)
+    graph.add_edges(vertex_2,vertex_1)
+    graph.add_edges(vertex_2,vertex_zero)
+    graph.add_edges(vertex_zero,vertex_2)
+    #Act
+    list = graph._breadthfirst(vertex_zero)
+    
+    #Assert 
+    assert list == [0,1,2]
