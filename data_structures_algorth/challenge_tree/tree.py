@@ -186,6 +186,53 @@ class BinarySearch(BinaryTree):
                 return True  
         return False
 
+def isBalanced(root) -> bool:
+    
+    left = height(root.left)
+    right = height(root.right)
+    if abs(left-right) > 1 :
+        return False 
+    else:
+        return True
+    
+    
+def height(root) -> bool:
+    if not root:
+        return -1
+    left = height(root.left)
+    right = height(root.right)
+    
+    return  1 + max(left,right)  
+def invertTree(root):
+          
+        if root.right and root.left:
+            temp = root.right
+            root.right = root.left
+            root.left = temp
+            
+            invertTree(root.left)
+            invertTree(root.right)
+def merge(root1,root2):
+    if not root1 and not root2:
+        node = Node(None)
+        return node
+    if not root1 :
+        return  root2
+    if not root2 :
+        return  root1
+    def traverser(root1,root2):
+            if not root1 and root2:
+                return root2
+            if not root2 and root1:
+                return root1
+            if root1 and root2:
+               node = Node(root1.value +root2.value)
+               node.left = traverser(root1.left,root2.left)
+               node.right = traverser(root1.right,root2.right)
+               return node
+    return traverser(root1,root2)
+
+
 
 if __name__=="__main__":
     binary_tree = BinaryTree()
@@ -206,16 +253,23 @@ if __name__=="__main__":
     by.root.left.right.left= Node(5)
     by.root.right.right = Node(9)
     by.root.right.right.left = Node(4)
-    print(by.max_value_queue_way())
+    # print(by.max_value_queue_way())
     byyy = BinaryTree()
     byyy.root = Node(-2)
     byyy.root.right = Node(-5)
     byyy.root.left = Node(-7)
-    print(byyy.max_value(byyy.root))
+    byyy.root.left.right = Node(-7)
+    byyy.root.left.left = Node(-7)
+    byyy.root.left.left.left = Node(-7)
+    # print(byyy.max_value(byyy.root))
     byy = BinaryTree()
     byy.root = Node(2)
     byy.root.right = Node(5)
     byy.max_value(byy.root)
+    hi = BinaryTree()
+    hi.root = Node(2)
+    hi.root.right = Node(3)
+    hi.max_value(byy.root)
     # print(byy.max)
     # print(binary_tree.max_value(binary_tree.root))
     # print(binary_tree.in_order(binary_tree.root))
@@ -228,8 +282,11 @@ if __name__=="__main__":
     bt.add(20)
     bt.add(2)
     bt.add(21)
-    print(5%5)
-   
+    print(isBalanced(byyy.root))
+    node = Node(None)
+    print(node.value)
+    print( merge(byy.root,hi.root))
+
     # print(bt.contain(10))
     # print(bt.contain(0))
     # print(bt.root.left.value)
