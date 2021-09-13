@@ -99,7 +99,7 @@ class Graph:
         
 
     def get_neighbors(self,vertex):
-        neighbors = self._adjacency_list.get(vertex.value)
+        neighbors = self._adjacency_list.get(vertex)
         
         
         return neighbors
