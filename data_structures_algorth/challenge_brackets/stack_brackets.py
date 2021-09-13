@@ -35,6 +35,7 @@ if __name__ == "__main__" :
     print(brackets_checker('{faop,}'))
     if 'h' in ['u','[']:
         print('fffffffff')
+    
 
 
 

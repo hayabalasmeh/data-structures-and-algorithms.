@@ -31,7 +31,16 @@ get neighbors
 size
 - Arguments: none
 - Returns the total number of nodes in the graph
+- breadth first
+- Arguments: Node
+- Return: A collection of nodes in the order they were visited.
+- Display the collection
+
 
 ## PR
 
-- [PR](https://github.com/hayabalasmeh/data-structures-and-algorithms./pull/23)
+- [PR](https://github.com/hayabalasmeh/data-structures-and-algorithms./pull/25)
+
+## WhiteBoard:
+
+- [Whiteboard](https://miro.com/welcomeonboard/TFAzQktpOFk0UWdsRjFGTXB5SDQ3b1BldzhXQk43WmFadHpnWU1ZUlZCdFB3aHNpNjJ5RHNLU2liRUMxZTRTSHwzMDc0NDU3MzYxNzU4NzExMTcx?invite_link_id=923665174282)
