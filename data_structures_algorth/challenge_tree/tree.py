@@ -214,8 +214,8 @@ def invertTree(root):
             invertTree(root.right)
 def merge(root1,root2):
     if not root1 and not root2:
-        node = Node(None)
-        return node
+        tree = BinaryTree()
+        return tree
     if not root1 :
         return  root2
     if not root2 :
@@ -231,6 +231,26 @@ def merge(root1,root2):
                node.right = traverser(root1.right,root2.right)
                return node
     return traverser(root1,root2)
+def sumOfLeftLeaves( root):
+        sum = 0
+        # if not root:
+        # #     return sum
+        flag = True
+        def travers(root,sum= 0,flag=True):
+            print(flag)
+            if root.left and not root.left and not root.right:
+                sum =  sum + root.value
+                print(root.value)
+                print(sum)
+            if root.left:
+                flag = True
+                travers(root.left,sum,True)
+            if root.right:
+                flag = False
+                travers(root.right,sum,False)
+            return sum
+            
+        return travers(root,sum,flag)
 
 
 
@@ -282,11 +302,11 @@ if __name__=="__main__":
     bt.add(20)
     bt.add(2)
     bt.add(21)
-    print(isBalanced(byyy.root))
+    # print(isBalanced(byyy.root))
     node = Node(None)
-    print(node.value)
-    print( merge(byy.root,hi.root))
-
+    # print(node.value)
+    # print( merge(byy.root,hi.root))
+    print(sumOfLeftLeaves(byy.root))
     # print(bt.contain(10))
     # print(bt.contain(0))
     # print(bt.root.left.value)

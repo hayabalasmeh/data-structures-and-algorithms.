@@ -8,7 +8,7 @@ class Vertex:
 
         """
         self.value = value
-        self.neighbor = []
+      
     def __str__(self) -> str:
         return self.value
   
@@ -24,6 +24,9 @@ class Edge:
     self.start_vertex = vertex
    
     self.weight = weight
+
+    def __str__(self):
+        return self.weight
 
 # edge1 = Edge(vertex)
 
@@ -43,22 +46,23 @@ class Graph:
     def _breadthfirst(self,root, action=lambda nodes: print(nodes)):
         """ 
         Performs a level order traversal of the graph and calls action at each node
+
         """
         nodes = []
         breadth = Queue()
         visited = []
 
         breadth.enqueue(root)
-        visited.append(root.value)
+        visited.append(root)
 
         while breadth.front:
             front = breadth.dequeue()
             nodes.append(front.value)
 
-            for child in front.neighbor:
-                if not child.value in visited:
-                    visited.append(child.value)
-                    breadth.enqueue(child)   
+            for child in self._adjacency_list.get(front.value):
+                if not child.start_vertex in visited:
+                    visited.append(child.start_vertex)
+                    breadth.enqueue(child.start_vertex)   
 
         return nodes
 
@@ -72,7 +76,7 @@ class Graph:
 
         """
         vertex = Vertex(value)
-        self._adjacency_list[value]= []
+        self._adjacency_list[vertex.value]= []
         return vertex
         
 
@@ -81,9 +85,12 @@ class Graph:
         Adds an edge to our graph
         
         """  
-        edge = Edge(vertex1, weight)
-        edge.start_vertex.neighbor.append(vertex2)
-        self._adjacency_list[vertex1.value] =  edge.start_vertex.neighbor
+        edge_one = Edge(vertex1, weight)
+        self._adjacency_list[vertex2.value].append(edge_one)
+
+        edge_two = Edge(vertex2, weight)
+        self._adjacency_list[vertex1.value].append(edge_two)
+        
        
 
     
@@ -92,15 +99,16 @@ class Graph:
         
 
     def get_neighbors(self,vertex):
-        neighbors = self._adjacency_list[vertex.value]
+        neighbors = self._adjacency_list.get(vertex.value)
         
         
-        return [neighbor.value for neighbor in neighbors]
+        return neighbors
         
        
 
     def size(self):
-        """Returns the total number of nodes in the graph
+        """
+        Returns the total number of nodes in the graph
         """
         return len(self._adjacency_list.keys())
     
