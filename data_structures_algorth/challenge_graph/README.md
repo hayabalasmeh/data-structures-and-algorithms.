@@ -36,6 +36,12 @@ size
 - Return: A collection of nodes in the order they were visited.
 - Display the collection
 
+- depth first
+- Arguments: Node (Starting point of search)
+- Return: A collection of nodes in their pre-order depth-first traversal order
+- Display the collection
+
+
 
 ## PR
 

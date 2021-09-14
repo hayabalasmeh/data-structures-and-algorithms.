@@ -112,8 +112,11 @@ class Graph:
         """
         return len(self._adjacency_list.keys())
     
-    # def to_adj_list(self):
-    #     return self._adjacency_list
+    def graph_depth_first(self):
+          """ 
+        Performs a depth first traversal of the graph and calls action at each node
+
+        """
     
 if __name__== '__main__':
         dic = {}
