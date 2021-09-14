@@ -1,4 +1,4 @@
-from data_structures_algorth.challenge_stack_and_queue.stack_queue import Queue
+from data_structures_algorth.challenge_stack_and_queue.stack_queue import Queue,Stack
 
 class Vertex:
   
@@ -112,11 +112,31 @@ class Graph:
         """
         return len(self._adjacency_list.keys())
     
-    def graph_depth_first(self):
-          """ 
+    def graph_depth_first(self,root):
+        """ 
         Performs a depth first traversal of the graph and calls action at each node
 
         """
+        stack = Stack()
+        stack.push(root)
+        nodes = []
+        
+        visited = []
+        visited.append(root)
+
+        while not stack.is_empty():
+            vertex = stack.peek()
+        
+            nodes.append(vertex.value)
+            stack.pop() 
+            for child in self._adjacency_list.get(vertex.value):
+                if not child.start_vertex in visited:
+                    visited.append(child.start_vertex)
+                   
+                    stack.push(child.start_vertex)
+              
+
+        return nodes
     
 if __name__== '__main__':
         dic = {}
@@ -137,6 +157,7 @@ if __name__== '__main__':
         print(graph.get_nodes())
         print(graph._breadthfirst(vertex_zero))
         print(graph.get_neighbors(vertex_zero))
+        print(graph.graph_depth_first(vertex_zero))
 
 
    
