@@ -45,7 +45,7 @@ size
 
 ## PR
 
-- [PR](https://github.com/hayabalasmeh/data-structures-and-algorithms./pull/25)
+- [PR](https://github.com/hayabalasmeh/data-structures-and-algorithms./pull/28)
 
 ## WhiteBoard:
 
