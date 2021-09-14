@@ -235,22 +235,60 @@ def sumOfLeftLeaves( root):
         sum = 0
         # if not root:
         # #     return sum
-        flag = True
-        def travers(root,sum= 0,flag=True):
-            print(flag)
-            if root.left and not root.left and not root.right:
+        # flag = True
+        def travers(root):
+            # print(flag)
+            nonlocal sum
+            if root.left and not root.left.left and not root.left.right:
+                
                 sum =  sum + root.value
                 print(root.value)
                 print(sum)
             if root.left:
-                flag = True
-                travers(root.left,sum,True)
+                
+                travers(root.left)
             if root.right:
-                flag = False
-                travers(root.right,sum,False)
-            return sum
+                
+                travers(root.right)
             
-        return travers(root,sum,flag)
+            
+        travers(root)
+        return sum
+
+def path(root,targetSum):
+        if not root:
+            return False
+        targetSum -= root.value
+        # result = False
+       
+        def travers(root):
+            nonlocal targetSum
+            if root:
+                
+                if (not root.left and not root.right) and targetSum == root.value:
+                    # if (sum + root.value) == targetSum:
+                    # print(targetSum)
+                    print('hi')
+                
+                    return True
+                # print(targetSum)
+                
+                print(targetSum)
+                targetSum -= root.value
+                print(targetSum)
+                # if root.left:
+                travers(root.left)
+                # if root.right:
+                travers(root.right)
+            else:
+                return False
+            
+            
+         
+        return  travers(root.left) or travers(root.right)
+      
+       
+        
 
 
 
@@ -285,6 +323,8 @@ if __name__=="__main__":
     byy = BinaryTree()
     byy.root = Node(2)
     byy.root.right = Node(5)
+    byy.root.left = Node(7)
+    byy.root.left.left = Node(3)
     byy.max_value(byy.root)
     hi = BinaryTree()
     hi.root = Node(2)
@@ -304,9 +344,10 @@ if __name__=="__main__":
     bt.add(21)
     # print(isBalanced(byyy.root))
     node = Node(None)
+    print(path(byy.root,12))
     # print(node.value)
     # print( merge(byy.root,hi.root))
-    print(sumOfLeftLeaves(byy.root))
+    # print(sumOfLeftLeaves(byy.root))
     # print(bt.contain(10))
     # print(bt.contain(0))
     # print(bt.root.left.value)
